@@ -22,34 +22,42 @@
        let num1 = Number(prompt('Insira um número:'))
        let num2 = Number(prompt('Insira outro número:'))
        let oper = prompt('+ => adição\n- => subtração\n*, X ou x => multiplicação\n/ ou : => divisão\nInsira um operador para efetuar a operação metemática:')
-        // Operações
-        if(isNaN(num1) || isNaN(num2)) {
+       let resultado
+       // Operações
+       if(isNaN(num1) || isNaN(num2)) {
             alert('ERRO: Você não digitou um número!!')
         }
-        else {
+         else {
             switch(oper) {
                 case '+':
-                    document.write(num1 + num2)
+                    resultado = num1 + num2
                     break
 
                 case '-':
-                    document.write(num1 - num2)
+                    resultado = num1 - num2
                     break
                 
                 case '*':
                 case 'x':
                 case 'X':
-                    document.write(num1 * num2)
+                    resultado = num1 * num2
                     break
 
                 case '/':
                 case ':':
-                    document.write(num1 / num2)
+                    resultado = num1 / num2
                     break
 
                 default:
                     alert('ERRO: Você digitou um caracter que não é um operador!!!')
             }
+        }
+        //document.write(num1 + ' ' + oper + ' ' + num2 + ' é igual a ' + resultado)
+        // String tamplates são strings delimitadas por `` (acendo agudo, "crase")
+        // e que aceitam, dentro delas a interpolação de variáveis usando o código
+        // ${}
+        if(resultado !== undefined) {
+            document.write(`${num1} ${oper} ${num2} é igual a ${resultado}`)
         }
         /*
         else {
